@@ -1,0 +1,10 @@
+.clearImg {
+  margin-top: 0.8em;
+  width: 1em;
+  height: 1em;
+  &:hover{
+    border: black solid 1px;
+    box-shadow: 0.075em 0.075em 0.3em 0.11em  black ;
+    cursor: pointer;
+  }
+}

@@ -1,7 +1,9 @@
 import React from 'react';
-import Card from './components/Card';
-import Header from './components/Header';
-import Drawer from './components/Drawer';
+import Card from './components/Card/Card';
+import Header from './components/Header/Header';
+import Drawer from './components/Drawer/Drawer';
+
+import './common/styles/style.scss'
 
 function App() {
   const [items, setItems] = React.useState([]);
@@ -25,8 +27,8 @@ function App() {
   };
 
   const onChangeSearchInput = (event) => {
-    console.log(event.target.value)
-    //setSearchValue();
+    //console.log(event.target.value)
+    setSearchValue(event.target.value);
   }
 
   return (
@@ -35,16 +37,19 @@ function App() {
       <Header onClickCart={() => setCartOpened(true)} />
       <div className="content p-40">
         <div className="d-flex align-center justify-between mb-40">
-          <h1>Все кроссовки</h1>
+          <h1>{searchValue ? `Search for request : "${searchValue}"`:'All Sneakers'}</h1>
           <div className="search-block d-flex">
             <img src="/img/search.svg" alt="Search" />
-            <input onChange={onChangeSearchInput}
-                   placeholder="Поиск..." />
+            <input
+                onChange={onChangeSearchInput}
+                value={searchValue}
+                placeholder="Поиск..." />
+            {searchValue && <img onClick={() => setSearchValue('')} className="clearImg" src="/img/btn-remove.svg" alt="ClearImg" />}
           </div>
         </div>
 
         <div className="d-flex flex-wrap">
-          {items.map((item,index) => (
+          {items.filter((item) => item.title.toLowerCase().includes(searchValue.toLowerCase())).map((item,index) => (
             <Card
                 key={index}
               title={item.title}

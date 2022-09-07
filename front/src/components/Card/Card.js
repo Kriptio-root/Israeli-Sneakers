@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './Card/Card.module.scss'
+import './Card.scss'
 
 function Card({ title, imageUrl, price, onFavorite, onPlus }) {
     const [isAdded,setIsAdded] = React.useState(false);
@@ -25,10 +25,10 @@ function Card({ title, imageUrl, price, onFavorite, onPlus }) {
           <b>{price}</b>
         </div>
           <img
-              className={styles.plus}
+              className="plus"
               onClick={onClickPlus}
               src={isAdded ? '/img/btn-checked.svg' : '/img/btn-plus.svg'}
-              alt="Plus"
+              alt="PlusImg"
           />
       </div>
     </div>
