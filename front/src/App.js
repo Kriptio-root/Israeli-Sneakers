@@ -1,4 +1,6 @@
 import React from 'react';
+import axios from "axios";
+
 import Card from './components/Card/Card';
 import Header from './components/Header/Header';
 import Drawer from './components/Drawer/Drawer';
@@ -12,17 +14,14 @@ function App() {
   const [searchValue, setSearchValue] = React.useState([]);
 
   React.useEffect(() => {
-    fetch('https://630e591337925634187bff3c.mockapi.io/items')
-      .then((res) => {
-        return res.json();
-      })
-      .then((json) => {
-        setItems(json);
-      });
+    axios.get('https://630e591337925634187bff3c.mockapi.io/items')
+        .then(res=>{
+          setItems(res.data);
+        });
   }, []);
 
   const onAddToCart = (obj) => {
-    console.log(obj)
+    axios.post('https://630e591337925634187bff3c.mockapi.io/cart',obj);
     setCartItems((prev) => [...prev, obj]);
   };
 
@@ -49,7 +48,9 @@ function App() {
         </div>
 
         <div className="d-flex flex-wrap">
-          {items.filter((item) => item.title.toLowerCase().includes(searchValue.toLowerCase())).map((item,index) => (
+          {
+            items.filter((item) => item.title.toString().toLowerCase().includes(searchValue.toString().toLowerCase()))
+              .map((item,index) => (
             <Card
                 key={index}
               title={item.title}
