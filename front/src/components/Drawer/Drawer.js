@@ -1,6 +1,4 @@
-import { v4 as uuidv4 } from 'uuid';
-function Drawer({ onClose, items = [] }) {
- // console.log(items)
+function Drawer({ onClose, onRemove, items = [] }) {
   return (
     <div className="overlay">
       <div className="drawer">
@@ -10,7 +8,7 @@ function Drawer({ onClose, items = [] }) {
 
         <div className="items">
           {items.map((obj) => (
-            <div className="cartItem d-flex align-center mb-20" key={uuidv4()}>
+            <div className="cartItem d-flex align-center mb-20" key={obj.id}>
               <div
                 style={{ backgroundImage: `url(${obj.imageUrl})` }}
                 className="cartItemImg"></div>
@@ -19,7 +17,11 @@ function Drawer({ onClose, items = [] }) {
                 <p className="mb-5">{obj.title}</p>
                 <b>{obj.price} руб.</b>
               </div>
-              <img className="removeBtn" src="/img/btn-remove.svg" alt="Remove" />
+              <img
+                  onClick={() => onRemove(obj.id)}
+                   className="removeBtn"
+                   src="/img/btn-remove.svg"
+                   alt="Remove" />
             </div>
           ))}
         </div>
