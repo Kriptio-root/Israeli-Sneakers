@@ -3,6 +3,7 @@ import './Card.scss'
 
 function Card({ title, imageUrl, price, onFavorite, onPlus }) {
     const [isAdded,setIsAdded] = React.useState(false);
+    const [isFavorite,setIsFavorite] = React.useState(false);
 
     const onClickPlus = () => {
         setIsAdded(isAdded=>!isAdded)
@@ -15,7 +16,7 @@ function Card({ title, imageUrl, price, onFavorite, onPlus }) {
   return (
     <div className="card">
       <div className="favorite" onClick={onFavorite}>
-        <img src="/img/heart-unliked.svg" alt="Unliked" />
+        <img src={isAdded ? '/img/heart-liked.svg' : "/img/heart-unliked.svg"} alt="Unliked" />
       </div>
       <img width={133} height={112} src={imageUrl} alt="Sneakers" />
       <h5>{title}</h5>
