@@ -1,0 +1,62 @@
+[
+ {
+  "title": "Ball",
+  "price": "750.00",
+  "imageUrl": "/img/sneakers/1.jpg",
+  "id": "1"
+ },
+ {
+  "title": "Ball",
+  "price": "750.00",
+  "imageUrl": "/img/sneakers/2.jpg",
+  "id": "2"
+ },
+ {
+  "title": "Ball",
+  "price": "750.00",
+  "imageUrl": "/img/sneakers/3.jpg",
+  "id": "3"
+ },
+ {
+  "title": "Ball",
+  "price": "750.00",
+  "imageUrl": "/img/sneakers/4.jpg",
+  "id": "4"
+ },
+ {
+  "title": "Ball",
+  "price": "750.00",
+  "imageUrl": "/img/sneakers/5.jpg",
+  "id": "5"
+ },
+ {
+  "title": "Ball",
+  "price": "750.00",
+  "imageUrl": "/img/sneakers/6.jpg",
+  "id": "6"
+ },
+ {
+  "title": "Ball",
+  "price": "750.00",
+  "imageUrl": "/img/sneakers/7.jpg",
+  "id": "7"
+ },
+ {
+  "title": "Ball",
+  "price": "750.00",
+  "imageUrl": "/img/sneakers/8.jpg",
+  "id": "8"
+ },
+ {
+  "title": "Ball",
+  "price": "750.00",
+  "imageUrl": "/img/sneakers/9.jpg",
+  "id": "9"
+ },
+ {
+  "title": "Ball",
+  "price": "750.00",
+  "imageUrl": "/img/sneakers/10.jpg",
+  "id": "10"
+ }
+]
