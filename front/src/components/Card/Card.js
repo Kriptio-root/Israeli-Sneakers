@@ -4,6 +4,7 @@ import './Card.scss'
 function Card({ title, imageUrl, price, onFavorite, onPlus,id }) {
     const [isAdded,setIsAdded] = React.useState(false);
     const [isFavorite,setIsFavorite] = React.useState(false);
+    const imgRegex=".jpg"
 
     const onClickPlus = () => {
         setIsAdded(isAdded=>!isAdded)
@@ -11,6 +12,7 @@ function Card({ title, imageUrl, price, onFavorite, onPlus,id }) {
     };
     const onClickFavorite = () => {
         setIsFavorite(!isFavorite)
+        onFavorite({ title, imageUrl, price,isAdded,id });
     }
 
 
@@ -19,11 +21,11 @@ function Card({ title, imageUrl, price, onFavorite, onPlus,id }) {
       <div className="favorite" onClick={onClickFavorite}>
         <img src={isFavorite ? '/img/heart-liked.svg' : "/img/heart-unliked.svg"} alt="Unliked" />
       </div>
-      <img width={133} height={112} src={imageUrl} alt="Sneakers" />
+      <img width={133} height={112} src={[imageUrl.slice(0,imageUrl.search(imgRegex)),id, imageUrl.slice(imageUrl.search(imgRegex))].join('')} alt={imageUrl.toString()}/>
       <h5>{title}</h5>
       <div className="d-flex justify-between align-center">
         <div className="d-flex flex-column">
-          <span>Цена:</span>
+          <span>Price:</span>
           <b>{price}</b>
         </div>
           <img

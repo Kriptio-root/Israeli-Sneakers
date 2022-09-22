@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from "axios";
+import {Route} from 'react-router-dom';
 
 import Card from './components/Card/Card';
 import Header from './components/Header/Header';
@@ -54,13 +55,13 @@ function App() {
             <Header onClickCart={() => setCartOpened(true)}/>
             <div className="content p-40">
                 <div className="d-flex align-center justify-between mb-40">
-                    <h1>{searchValue ? `Search for request : "${searchValue}"` : 'All Sneakers'}</h1>
+                    <h1>{searchValue.length >0 && searchValue.toString() !== '' ? `Search for request : "${searchValue}"` : 'All Sneakers'}</h1>
                     <div className="search-block d-flex">
                         <img src="/img/search.svg" alt="Search"/>
                         <input
                             onChange={onChangeSearchInput}
                             value={searchValue}
-                            placeholder="Поиск..."/>
+                            placeholder="Search..."/>
                         {searchValue &&
                             <img onClick={() => setSearchValue('')} className="clearImg" src="/img/btn-remove.svg"
                                  alt="ClearImg"/>}
@@ -76,6 +77,7 @@ function App() {
                                     title={item.title}
                                     price={item.price}
                                     imageUrl={item.imageUrl}
+                                    id={item.id}
                                     onFavorite={(obj) => onAddToFavorite(obj)}
                                     onPlus={(obj) => onAddToCart(obj)}
                                 />

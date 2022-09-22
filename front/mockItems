@@ -60,3 +60,67 @@
   "id": "10"
  }
 ]
+
+---------------------
+[
+ {
+  "title": "Nike Blazer Mid Suede",
+  "price": "750.00",
+  "imageUrl": "/img/sneakers/.jpg",
+  "id": "1"
+ },
+ {
+  "title": "Nike Air Max 270",
+  "price": "750.00",
+  "imageUrl": "/img/sneakers/.jpg",
+  "id": "2"
+ },
+ {
+  "title": "Nike Blazer Mid Suede",
+  "price": "750.00",
+  "imageUrl": "/img/sneakers/.jpg",
+  "id": "3"
+ },
+ {
+  "title": "Puma X Aka Boku Future Rider",
+  "price": "750.00",
+  "imageUrl": "/img/sneakers/.jpg",
+  "id": "4"
+ },
+ {
+  "title": "Nike Air Max Plus",
+  "price": "750.00",
+  "imageUrl": "/img/sneakers/.jpg",
+  "id": "5"
+ },
+ {
+  "title": "Nike Air Force 1",
+  "price": "750.00",
+  "imageUrl": "/img/sneakers/.jpg",
+  "id": "6"
+ },
+ {
+  "title": "Nike React Pegasus Trail 4 GORE-TEX",
+  "price": "750.00",
+  "imageUrl": "/img/sneakers/.jpg",
+  "id": "7"
+ },
+ {
+  "title": "Nike ZoomX Streakfly",
+  "price": "750.00",
+  "imageUrl": "/img/sneakers/.jpg",
+  "id": "8"
+ },
+ {
+  "title": "Nike Blazer Low 77 Jumbo",
+  "price": "750.00",
+  "imageUrl": "/img/sneakers/.jpg",
+  "id": "9"
+ },
+ {
+  "title": "Nike Air Max 90 SE",
+  "price": "750.00",
+  "imageUrl": "/img/sneakers/.jpg",
+  "id": "10"
+ }
+]
