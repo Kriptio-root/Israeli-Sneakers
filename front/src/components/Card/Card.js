@@ -1,9 +1,9 @@
 import React from 'react';
 import './Card.scss'
 
-function Card({ title, imageUrl, price, onFavorite, onPlus,id }) {
+function Card({ title, imageUrl, price, onFavorite, onPlus,id,favorited=false }) {
     const [isAdded,setIsAdded] = React.useState(false);
-    const [isFavorite,setIsFavorite] = React.useState(false);
+    const [isFavorite,setIsFavorite] = React.useState(favorited);
     const imgRegex=".jpg"
 
     const onClickPlus = () => {
