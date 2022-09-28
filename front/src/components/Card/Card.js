@@ -3,7 +3,7 @@ import ContentLoader from "react-content-loader"
 
 import './Card.scss'
 
-function Card({title, imageUrl, price, onFavorite, onPlus, id, favorited = false, added = false, loading = false}) {
+function Card({title, imageUrl, price, onFavorite, onPlus, id, favorited = false, added = false, loading = true}) {
     const [isAdded, setIsAdded] = React.useState(added);
     const [isFavorite, setIsFavorite] = React.useState(favorited);
     const imgRegex = ".jpg"

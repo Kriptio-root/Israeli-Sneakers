@@ -17,14 +17,26 @@ function Home() {
     const [isLoading, setIsLoading] = React.useState(true);
 
     const onChangeSearchInput = (event) => {
-        //console.log(event.target.value)
         setSearchValue(event.target.value);
     }
 
     const renderItems =() => {
+        const mockArr=[
+            {title: 'checking', price: 'checking', imageUrl: '/img/sneakers/.jpg', id: '1'},
+            {title: 'checking', price: 'checking', imageUrl: '/img/sneakers/.jpg', id: '2'},
+            {title: 'checking', price: 'checking', imageUrl: '/img/sneakers/.jpg', id: '3'},
+            {title: 'checking', price: 'checking', imageUrl: '/img/sneakers/.jpg', id: '4'},
+            {title: 'checking', price: 'checking', imageUrl: '/img/sneakers/.jpg', id: '5'},
+            {title: 'checking', price: 'checking', imageUrl: '/img/sneakers/.jpg', id: '6'},
+            {title: 'checking', price: 'checking', imageUrl: '/img/sneakers/.jpg', id: '7'},
+            {title: 'checking', price: 'checking', imageUrl: '/img/sneakers/.jpg', id: '8'}
+        ]
+        console.log(mockArr)
+        console.log(items)
+        console.log(isLoading)
         const filteredItems =items.filter((item) => item.title.toString().toLowerCase().includes(searchValue.toString().toLowerCase()))
     return (
-        isLoading ? [...Array(8)] : filteredItems
+        (isLoading ? mockArr : filteredItems)
                 .map((item, index) => (
                     <Card
                     key={index}
