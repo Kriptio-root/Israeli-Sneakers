@@ -6,7 +6,9 @@ import Drawer from "../components/Drawer/Drawer";
 import Header from "../components/Header/Header";
 import Card from "../components/Card/Card";
 import Favorites from "./favorites";
+import Search from "../components/Search/Search"
 
+export const AppContext = React.createContext({})
 
 function Home() {
     const [items, setItems] = React.useState([]);
@@ -20,8 +22,8 @@ function Home() {
         setSearchValue(event.target.value);
     }
 
-    const renderItems =() => {
-        const mockArr=[
+    const renderItems = () => {
+        const mockArr = [
             {title: 'checking', price: 'checking', imageUrl: '/img/sneakers/.jpg', id: '1'},
             {title: 'checking', price: 'checking', imageUrl: '/img/sneakers/.jpg', id: '2'},
             {title: 'checking', price: 'checking', imageUrl: '/img/sneakers/.jpg', id: '3'},
@@ -31,37 +33,35 @@ function Home() {
             {title: 'checking', price: 'checking', imageUrl: '/img/sneakers/.jpg', id: '7'},
             {title: 'checking', price: 'checking', imageUrl: '/img/sneakers/.jpg', id: '8'}
         ]
-        console.log(mockArr)
-        console.log(items)
-        console.log(isLoading)
-        const filteredItems =items.filter((item) => item.title.toString().toLowerCase().includes(searchValue.toString().toLowerCase()))
-    return (
-        (isLoading ? mockArr : filteredItems)
+
+        const filteredItems = items.filter((item) => item.title.toString().toLowerCase().includes(searchValue.toString().toLowerCase()))
+        return (
+            (isLoading ? mockArr : filteredItems)
                 .map((item, index) => (
-                    <Card
-                    key={index}
-                    title={item.title}
-                    price={item.price}
-                    imageUrl={item.imageUrl}
-                    id={item.id}
-                    onFavorite={(obj) => onAddToFavorite(obj)}
-                    onPlus={(obj) => onAddToCart(obj)}
-                    added={cartItems.some((obj) => Number(obj.id) === Number(item.id))}
-                    loading={isLoading}
-                />))
-    )
+                    <AppContext.Provider value={{}}> <Card
+                        key={index}
+                        title={item.title}
+                        price={item.price}
+                        imageUrl={item.imageUrl}
+                        id={item.id}
+                        onFavorite={(obj) => onAddToFavorite(obj)}
+                        onPlus={(obj) => onAddToCart(obj)}
+                        added={isItemAdded(item.id)}
+                        loading={isLoading}
+                    /> </AppContext.Provider>))
+        )
 
     }
 
-    React.useEffect( () => {
+    React.useEffect(() => {
         async function fetchData() {
             setIsLoading(true)
 
-            const {data:itemsResponse} = await axios.get('https://630e591337925634187bff3c.mockapi.io/items')
+            const {data: itemsResponse} = await axios.get('https://630e591337925634187bff3c.mockapi.io/items')
 
-            const {data:cartResponse}  = await  axios.get('https://630e591337925634187bff3c.mockapi.io/cart')
+            const {data: cartResponse} = await axios.get('https://630e591337925634187bff3c.mockapi.io/cart')
 
-            const {data:favoritesResponse}  = await axios.get('https://630e591337925634187bff3c.mockapi.io/favorites')
+            const {data: favoritesResponse} = await axios.get('https://630e591337925634187bff3c.mockapi.io/favorites')
 
             setIsLoading(false)
 
@@ -69,6 +69,7 @@ function Home() {
             setFavorites(favoritesResponse);
             setItems(itemsResponse);
         }
+
         fetchData();
     }, []);
 
@@ -106,7 +107,12 @@ function Home() {
         setCartItems((prev) => prev.filter(item => item.id !== id));
     }
 
+    const isItemAdded = (id) => {
+return cartItems.some((obj) => Number(obj.id) === Number(id))
+    }
+
     return (
+        <AppContext.Provider value={{items, cartItems, favorites}}>
         <div className="wrapper clear">
             {cartOpened &&
                 <Drawer
@@ -117,30 +123,21 @@ function Home() {
             <Routes>
                 <Route path="*" exact element={
                     <div className="content p-40">
-                        <div className="d-flex align-center justify-between mb-40">
-                            <h1>{searchValue.length > 0 && searchValue.toString() !== '' ? `Search for request : "${searchValue}"` : 'All Sneakers'}</h1>
-                            <div className="search-block d-flex">
-                                <img src="/img/search.svg" alt="Search"/>
-                                <input
-                                    onChange={onChangeSearchInput}
-                                    value={searchValue}
-                                    placeholder="Search..."/>
-                                {searchValue &&
-                                    <img onClick={() => setSearchValue('')} className="clearImg"
-                                         src="/img/btn-remove.svg"
-                                         alt="ClearImg"/>}
-                            </div>
-                        </div>
-
+                        <Search
+                            searchValue={searchValue}
+                            setSearchValue={setSearchValue}
+                            onChangeSearchInput={onChangeSearchInput}
+                        ></Search>
                         <div className="d-flex flex-wrap">
                             {renderItems()}
                         </div>
                     </div>}>
                 </Route>
                 <Route path='favorites' exact
-                       element={<Favorites items={{favorites}} onFavorite={(obj) => onAddToFavorite(obj)}/>}></Route>
+                       element={<Favorites onFavorite={(obj) => onAddToFavorite(obj)}/>}></Route>
             </Routes>
         </div>
+        </AppContext.Provider>
     )
 }
 
