@@ -38,7 +38,7 @@ function Drawer({onClose, onRemove, items = []}) {
         <div className="drawer__overlay">
             <div className="drawer">
                 <h2 className="d-flex justify-between mb-30">
-                    Корзина <img onClick={onClose} className="cu-p" src="/img/btn-remove.svg" alt="Close"/>
+                    Корзина <img onClick={onClose} className="cu-p" src="img/btn-remove.svg" alt="Close"/>
                 </h2>
                 {items.length > 0 ? (
                     <div>
@@ -56,7 +56,7 @@ function Drawer({onClose, onRemove, items = []}) {
                                     <img
                                         onClick={() => onRemove(obj.id)}
                                         className="removeBtn"
-                                        src="/img/btn-remove.svg"
+                                        src="img/btn-remove.svg"
                                         alt="Remove"/>
                                 </div>
                             ))}
@@ -76,13 +76,13 @@ function Drawer({onClose, onRemove, items = []}) {
                                 </li>
                             </ul>
                             <button onClick={onClickOrder} className="greenButton">
-                                Process order <img src="/img/arrow.svg" alt="Arrow"/>
+                                Process order <img src="img/arrow.svg" alt="Arrow"/>
                             </button>
                         </div>
                     </div>
                 ) : (
                     <Info
-                        image={isComplete ? "/img/complete-cart.png" : '/img/emptyCart.svg'}
+                        image={isComplete ? "img/complete-cart.png" : 'img/emptyCart.svg'}
                         title={isComplete ? "Order complete!" : "Cart is empty"}
                         description={isComplete ? `You will get your order number ${orderId} soon!` : "Add at least one item to process the order."}
                     ></Info>
