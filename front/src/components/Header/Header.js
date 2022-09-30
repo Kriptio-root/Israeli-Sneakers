@@ -21,12 +21,12 @@ function Header(props) {
           <img width={18} height={18} src="img/cart.svg" alt="cartImage"/>
           <span>{totalPrice} {'\u20aa'} </span>
         </li>
-          <Link to="/favorites">
+          <Link to="/Israeli-Sneakers/favorites">
           <li className="mr-15 cu-p">
               <img width={18} height={18} src="img/heart.svg" alt="favoritesHeart"/>
           </li>
           </Link>
-          <Link to="/orders">
+          <Link to="/Israeli-Sneakers/orders">
         <li>
           <img width={18} height={18}  src="img/user.svg" alt="userProfile"/>
         </li>
