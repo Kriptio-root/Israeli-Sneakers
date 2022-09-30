@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/Israeli-Sneakers/static/css/main.511d632f.chunk.css",
-    "main.js": "/Israeli-Sneakers/static/js/main.addcbc7e.chunk.js",
-    "main.js.map": "/Israeli-Sneakers/static/js/main.addcbc7e.chunk.js.map",
+    "main.js": "/Israeli-Sneakers/static/js/main.8142ef8a.chunk.js",
+    "main.js.map": "/Israeli-Sneakers/static/js/main.8142ef8a.chunk.js.map",
     "runtime-main.js": "/Israeli-Sneakers/static/js/runtime-main.203601a4.js",
     "runtime-main.js.map": "/Israeli-Sneakers/static/js/runtime-main.203601a4.js.map",
     "static/css/2.1cdcfe91.chunk.css": "/Israeli-Sneakers/static/css/2.1cdcfe91.chunk.css",
@@ -18,6 +18,6 @@
     "static/css/2.1cdcfe91.chunk.css",
     "static/js/2.b59aa93a.chunk.js",
     "static/css/main.511d632f.chunk.css",
-    "static/js/main.addcbc7e.chunk.js"
+    "static/js/main.8142ef8a.chunk.js"
   ]
 }
