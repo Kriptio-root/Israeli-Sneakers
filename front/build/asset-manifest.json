@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/Israeli-Sneakers/static/css/main.511d632f.chunk.css",
+    "main.js": "/Israeli-Sneakers/static/js/main.5f19eb80.chunk.js",
+    "main.js.map": "/Israeli-Sneakers/static/js/main.5f19eb80.chunk.js.map",
+    "runtime-main.js": "/Israeli-Sneakers/static/js/runtime-main.203601a4.js",
+    "runtime-main.js.map": "/Israeli-Sneakers/static/js/runtime-main.203601a4.js.map",
+    "static/css/2.1cdcfe91.chunk.css": "/Israeli-Sneakers/static/css/2.1cdcfe91.chunk.css",
+    "static/js/2.b59aa93a.chunk.js": "/Israeli-Sneakers/static/js/2.b59aa93a.chunk.js",
+    "static/js/2.b59aa93a.chunk.js.map": "/Israeli-Sneakers/static/js/2.b59aa93a.chunk.js.map",
+    "index.html": "/Israeli-Sneakers/index.html",
+    "static/css/2.1cdcfe91.chunk.css.map": "/Israeli-Sneakers/static/css/2.1cdcfe91.chunk.css.map",
+    "static/css/main.511d632f.chunk.css.map": "/Israeli-Sneakers/static/css/main.511d632f.chunk.css.map",
+    "static/js/2.b59aa93a.chunk.js.LICENSE.txt": "/Israeli-Sneakers/static/js/2.b59aa93a.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.203601a4.js",
+    "static/css/2.1cdcfe91.chunk.css",
+    "static/js/2.b59aa93a.chunk.js",
+    "static/css/main.511d632f.chunk.css",
+    "static/js/main.5f19eb80.chunk.js"
+  ]
+}
