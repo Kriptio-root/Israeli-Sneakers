@@ -23,6 +23,10 @@
       margin-right: 15px;
       transition: transform 0.15s ease-in-out;
     }
+    &:disabled {
+      background-color: #bebebe !important;
+      cursor: default !important;
+    }
   }
 }
 //.drawer{
